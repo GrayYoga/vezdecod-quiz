@@ -1,4 +1,4 @@
-package com.vezdecod.quiz.model;
+package com.vezdecod.quiz.controller.model.entity;
 
 import lombok.Data;
 

@@ -1,11 +1,9 @@
-package com.vezdecod.quiz.model;
+package com.vezdecod.quiz.controller.model.entity;
 
 import javax.persistence.*;
 
 import lombok.Data;
 import lombok.NonNull;
-
-import static javax.persistence.GenerationType.SEQUENCE;
 
 @Data
 @Entity

@@ -1,17 +1,21 @@
 package com.vezdecod.quiz.controller;
 
-import com.vezdecod.quiz.model.Question;
-import com.vezdecod.quiz.repository.QuestionRepository;
+import com.vezdecod.quiz.controller.model.entity.Question;
+import com.vezdecod.quiz.controller.model.QuestionRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
 @Service
+@RestController
+@RequiredArgsConstructor
 public class QuizController {
-    @Autowired()
-    private QuestionRepository questionRepo;
+//    @Autowired()
+    QuestionRepository questionRepo;
+//    @Autowired
+//    TutorialRepository tutorialRepository;
 
     @GetMapping("/")
     public String index() {
