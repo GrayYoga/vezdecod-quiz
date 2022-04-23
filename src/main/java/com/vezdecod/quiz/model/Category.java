@@ -12,22 +12,13 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @Data
 public class Category {
 
-    @GeneratedValue(strategy=SEQUENCE, generator="CUST_SEQ")
+    @GeneratedValue(strategy = SEQUENCE, generator = "CUST_SEQ")
     private @Id Long id;
     private String name;
 
     public Category() {
 
     }
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
-//
-//    @Id
-//    public Long getId() {
-//        return id;
-//    }
 
     public Category(String name) {
         this.name = name;

@@ -3,6 +3,7 @@ package com.vezdecod.quiz.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 import lombok.NonNull;
@@ -12,9 +13,11 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @Data
 @Entity
 public class Question {
-    @GeneratedValue(strategy=SEQUENCE, generator="CUST_SEQ")
+    @GeneratedValue(strategy = SEQUENCE, generator = "CUST_SEQ")
     private @Id Long id;
     private int difficulty;
+
+    @ManyToOne()
     private Category category;
     private String question;
 
