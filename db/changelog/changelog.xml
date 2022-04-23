@@ -6,20 +6,50 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
     <changeSet id="1" author="Liquibase">
         <createTable tableName="questions">
-            <column name="id" type="int">
+            <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true"/>
             </column>
             <column name="difficulty" type="BIGINT">
                 <constraints nullable="false"/>
             </column>
             <column name="question" type="VARCHAR(1024)"/>
+            <column name="answer" type="VARCHAR(1024)"/>
             <column name="category_id" type="BIGINT"/>
         </createTable>
         <createTable tableName="categories">
-            <column name="id" type="BIGINT">
+            <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true"/>
             </column>
             <column name="name" type="VARCHAR(1024)"/>
         </createTable>
+    </changeSet>
+    <changeSet id="2" author="gray">
+        <sql>
+            INSERT INTO categories VALUES (1, 'Литература'), (2,'Техника'), (3,'История'), (4, 'Программирование');
+        </sql>
+    </changeSet>
+    <changeSet id="3" author="gray">
+        <sql>
+            INSERT INTO questions VALUES
+                                      (1, 100, 'Поэт, автор поэмы Евгений Онегин', 'Пушкин', 1),
+                                      (2, 200, 'Автор романа "Война и мир"', 'Толстой', 1),
+                                      (3, 300, 'Автор романа "Обломов"', 'Гончаров', 1),
+                                      (4, 400, 'Автор произведения "Мцыри"', 'Лермонтов', 1);
+            INSERT INTO questions VALUES
+                                      (5, 100, 'Единица измерения тока', 'Ампер', 2),
+                                      (6, 200, 'Единица измерения напряжения', 'Вольт', 2),
+                                      (7, 300, 'Единица измерения силы', 'Ньютон', 2),
+                                      (8, 400, 'Единицы измерения индуктивность', 'Генри', 2);
+            INSERT INTO questions VALUES
+                                      (9, 100, 'Год в который произошло Бородинское сражение', '1812', 3),
+                                      (10, 200, 'Царь - реформатор', 'Петр Первый', 3),
+                                      (11, 300, 'Год образования СССР', '1922', 3),
+                                      (12, 400, 'Год крещения Руси', '988', 3);
+            INSERT INTO questions VALUES
+                                      (13, 100, '"Змеиный" язык', 'Python', 4),
+                                      (14, 200, 'Язык запросов к базам данных', 'SQL', 4),
+                                      (15, 300, 'Компания пионер оконного интерфейса', 'Xerox', 4),
+                                      (16, 400, 'Движок JS в Google Chrome', 'v8', 4);
+        </sql>
     </changeSet>
 </databaseChangeLog>
