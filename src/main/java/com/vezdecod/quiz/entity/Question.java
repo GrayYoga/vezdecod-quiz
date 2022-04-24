@@ -1,16 +1,14 @@
-package com.vezdecod.quiz.controller.model.entity;
+package com.vezdecod.quiz.entity;
 
 import javax.persistence.*;
 
-import lombok.Data;
-import lombok.NonNull;
-
-@Data
+//@Data
 @Entity
-@Table(name = "questions")
+//@Table(name = "questions")
 public class Question {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private @Id Long id;
+    private Long id;
     private int difficulty;
 
     @ManyToOne()
@@ -25,14 +23,5 @@ public class Question {
 
     public Question() {
 
-    }
-
-    public void setId(@NonNull Long id) {
-        this.id = id;
-    }
-
-    @Id
-    public @NonNull Long getId() {
-        return id;
     }
 }

@@ -1,8 +1,7 @@
-package com.vezdecod.quiz.controller.model.entity;
-
-import lombok.Data;
+package com.vezdecod.quiz.entity;
 
 import javax.persistence.*;
+import lombok.Data;
 
 @Data
 @Entity
@@ -10,7 +9,8 @@ import javax.persistence.*;
 public class Category {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private @Id Long id;
+    @Id
+    private Long id;
     private String name;
 
     public Category() {
